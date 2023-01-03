@@ -18,7 +18,7 @@ protocol MainViewPresenerProtocol: AnyObject {
 
 class MainViewPresenter: MainViewPresenerProtocol {
     
-    let view: MainViewProtocol
+    weak var view: MainViewProtocol?
     let person: Person
     
     required init(view: MainViewProtocol, person: Person) {
@@ -28,6 +28,6 @@ class MainViewPresenter: MainViewPresenerProtocol {
     
     func showGreeting() {
         let greeting = person.firstName + " " + person.lastName
-        self.view.setGreeting(greeting: greeting)
+        self.view?.setGreeting(greeting: greeting)
     }
 }
