@@ -40,7 +40,13 @@ extension MainViewController: UITableViewDataSource {
     }
 }
 
-extension MainViewController: UITableViewDelegate {}
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let comment = presenter.comments?[indexPath.row]
+        let detailVC = ModulBilder.createDetailModul(comment: comment)
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+}
 
 extension MainViewController: MainViewProtocol {
     func success() {
@@ -50,6 +56,4 @@ extension MainViewController: MainViewProtocol {
     func failure(error: Error) {
         debugPrint(error.localizedDescription)
     }
-    
-
 }
