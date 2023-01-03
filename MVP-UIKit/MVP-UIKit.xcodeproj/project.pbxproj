@@ -19,6 +19,7 @@
 		0F90CD0F2964356E00DD8B35 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90CD0E2964356E00DD8B35 /* Person.swift */; };
 		0F90CD112964359E00DD8B35 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90CD102964359E00DD8B35 /* MainViewPresenter.swift */; };
 		0F90CD1729643B7D00DD8B35 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F90CD1629643B7D00DD8B35 /* MainViewController.xib */; };
+		0F90CD1929643ED500DD8B35 /* ModulBilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F90CD1829643ED500DD8B35 /* ModulBilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		0F90CD0E2964356E00DD8B35 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		0F90CD102964359E00DD8B35 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
 		0F90CD1629643B7D00DD8B35 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		0F90CD1829643ED500DD8B35 /* ModulBilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulBilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				0F90CCDE2964352100DD8B35 /* AppDelegate.swift */,
 				0F90CCE02964352100DD8B35 /* SceneDelegate.swift */,
+				0F90CD1829643ED500DD8B35 /* ModulBilder.swift */,
 				0F90CD1229643AFF00DD8B35 /* MainModul */,
 				0F90CCE42964352100DD8B35 /* Main.storyboard */,
 				0F90CCE72964352200DD8B35 /* Assets.xcassets */,
@@ -301,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F90CD112964359E00DD8B35 /* MainViewPresenter.swift in Sources */,
+				0F90CD1929643ED500DD8B35 /* ModulBilder.swift in Sources */,
 				0F90CCE32964352100DD8B35 /* MainViewController.swift in Sources */,
 				0F90CCDF2964352100DD8B35 /* AppDelegate.swift in Sources */,
 				0F90CD0F2964356E00DD8B35 /* Person.swift in Sources */,
