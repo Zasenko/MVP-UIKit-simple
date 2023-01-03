@@ -10,23 +10,50 @@ import UIKit
 class MainViewController: UIViewController {
 
     // MARK: - IBOutlet
-    @IBOutlet weak var greetingLable: UILabel!
+
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Properties
     
     var presenter: MainViewPresenerProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
     // MARK: - Functions
+}
+
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        presenter.comments?.count ?? 0
+    }
     
-    @IBAction func didTapButton(_ sender: Any) {
-        self.presenter.showGreeting()
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let comment = presenter.comments?[indexPath.row]
+        cell.textLabel?.text = comment?.body
+        return cell
+    }
+}
+
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let comment = presenter.comments?[indexPath.row]
+        let detailVC = ModulBilder.createDetailModul(comment: comment)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }
 
 extension MainViewController: MainViewProtocol {
-    func setGreeting(greeting: String) {
-        greetingLable.text = greeting
+    func success() {
+        tableView.reloadData()
+    }
+    
+    func failure(error: Error) {
+        debugPrint(error.localizedDescription)
     }
 }
