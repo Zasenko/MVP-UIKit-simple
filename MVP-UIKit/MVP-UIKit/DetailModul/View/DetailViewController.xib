@@ -20,16 +20,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kha-UD-JCa">
-                    <rect key="frame" x="20" y="416" width="353" height="20"/>
+                    <rect key="frame" x="20" y="416" width="353" height="20.333333333333314"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHn-x2-gr6">
+                    <rect key="frame" x="169.66666666666666" y="456.33333333333331" width="54" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="pop"/>
+                    <connections>
+                        <action selector="popButtonTapped:" destination="-1" eventType="touchUpInside" id="b1X-n5-4a2"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="tHn-x2-gr6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7a8-5V-Btw"/>
                 <constraint firstItem="kha-UD-JCa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="KA8-Jq-q4C"/>
+                <constraint firstItem="tHn-x2-gr6" firstAttribute="top" secondItem="kha-UD-JCa" secondAttribute="bottom" constant="20" id="QCi-7x-eDV"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kha-UD-JCa" secondAttribute="trailing" constant="20" id="W8O-av-46V"/>
                 <constraint firstItem="kha-UD-JCa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="c5I-zd-RDG"/>
                 <constraint firstItem="kha-UD-JCa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fEP-YR-xcJ"/>
