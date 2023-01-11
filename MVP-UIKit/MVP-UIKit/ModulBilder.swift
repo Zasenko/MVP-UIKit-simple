@@ -7,24 +7,25 @@
 
 import UIKit
 
-protocol Bilder {
-    static func createMainModul() -> UIViewController
-    static func createDetailModul(comment: Comment?) -> UIViewController
+protocol BuilderProtocol {
+    func createMainModul(router: RouterProtocol) -> UIViewController
+    func createDetailModul(comment: Comment?, router: RouterProtocol) -> UIViewController
 }
 
-class ModulBilder: Bilder {
-    static func createMainModul() -> UIViewController {
+class ModulBilder: BuilderProtocol {
+    
+    func createMainModul(router: RouterProtocol) -> UIViewController {
         let networkService = NetworkService()
         let view = MainViewController()
-        let presenter = MainViewPresenter(view: view, networkService: networkService)
+        let presenter = MainViewPresenter(view: view, networkService: networkService, router: router)
         view.presenter = presenter
         return view
     }
     
-    static func createDetailModul(comment: Comment?) -> UIViewController {
+    func createDetailModul(comment: Comment?, router: RouterProtocol) -> UIViewController {
         let view = DetailViewController()
         let networkService = NetworkService()
-        let presenter = DetailPresentor(view: view, networkService: networkService, comment: comment)
+        let presenter = DetailPresentor(view: view, networkService: networkService, router: router, comment: comment)
         view.presenter = presenter
         return view
     }

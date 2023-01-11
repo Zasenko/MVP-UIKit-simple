@@ -18,6 +18,11 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         presenter.setComment()
     }
+    
+    @IBAction func popButtonTapped(_ sender: UIButton) {
+        presenter.tap()
+    }
+    
 
 }
 
